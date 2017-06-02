@@ -18,3 +18,6 @@ function sendRequest() {
     httpRequest.open("GET", "http://swapi.co/api/", true);
     httpRequest.send();
 }
+function displayResponseData(data) {
+    document.getElementById("output1").innerHTML = data;
+}
