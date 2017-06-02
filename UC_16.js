@@ -15,6 +15,6 @@ function sendRequest() {
             // Waiting for a response...
         }
     };
-    httpRequest.open("GET", "http://swapi.co/api/people/1/", true);
+    httpRequest.open("GET", "https://swapi.co/", true);
     httpRequest.send();
 }
