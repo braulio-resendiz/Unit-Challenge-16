@@ -22,4 +22,4 @@ function displayResponseData(data) {
     document.getElementById("output1").innerHTML = data;
 }
 
-// 88 people to put into system
+// 88 people to put into system, http http://swapi.co/api/people/1/
