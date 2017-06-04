@@ -3,7 +3,7 @@ function sendRequest() {
     httpRequest.onreadystatechange = function () {
         if (this.readyState === 4) {
             // We got a response from the server!
-            if(this.status === 200) {
+            if (this.status === 200) {
                 // The request was successful!
                 displayResponseData(this.responseText);
             } else {
@@ -18,6 +18,7 @@ function sendRequest() {
     httpRequest.open("GET", "http://swapi.co/api/", true);
     httpRequest.send();
 }
+
 function displayResponseData(data) {
     document.getElementById("output1").innerHTML = data;
 }
