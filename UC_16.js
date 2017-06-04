@@ -27,7 +27,7 @@ function displayResponseData(data) {
 // 88 people to put into system, http http://swapi.co/api/people/1/
 function findCharacter(SWId) {
     // First get the zip code from the HTML textbox
-    var zip = document.getElementById(SWId).value;
+    var character = document.getElementById(SWId).value;
     // Now make a HTTP request
     var httpRequest = new XMLHttpRequest();
     httpRequest.onreadystatechange = function () {
