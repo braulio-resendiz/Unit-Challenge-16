@@ -6,29 +6,393 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="ajaxFunctions.js"></script>
+
+    <script src="UC_16.js"></script>
+    <link rel="stylesheet " href="UC_16.css">
 </head>
 
 <body>
     <div class="container">
         <h2>Star Wars Character Encyclopedia</h2>
         <br/>
-        <p>Try entering the name of a star wars character like <b>Sheev Palpatine</b></p>
+        <p>Try entering the number that corresponds to the character you want to know about<b></b></p>
         <div>
             <div id="SWbox" class="control-group">
-                <label for="SW">Name:</label>
-                <input type="text" name="SW" id="SW" placeholder="Input a number to find a character!" /> </div>
+                <label for="SW">Number:</label>
+                <input type="text" width=72px name="SWId" id="SWId" placeholder="Input a number" /> </div>
         </div>
         <br />
         <div>
-            <button class='btn btn-success btn-large' onclick="findCharacter('character')">Find Character Info</button>
+            <button class="btn btn-success btn-large" onclick="findCharacter('SWId')">Find Character Info</button>
         </div>
         <br />
-        <div>
-            <div id="place" class=""></div>
+        <div id="container">
+            <div id="output">Nothing Yet</div>
+            <div id="HomeworldOutput">Unknown</div>
+            <div id="SpeciesOutput">Unknown</div>
         </div>
+        <p>---------------------------------------------------------------------------------------------------------------</p>
+        <div>
+            <table style="width:23%">
+                <tr>
+                    <th>Name</th>
+                    <th colspan="2">Number</th>
+                </tr>
+                <tr>
+                    <td>Luke Skywalker</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>C-3PO</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>R2-D2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>Darth Vader</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>Leia Organa</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>Owen Lars</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>Beru Whitesun Lars</td>
+                    <td>7</td>
+                </tr>
+                <tr>
+                    <td>R5-D4</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>Biggs Darklighter</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td>Obi-Wan Kenobi</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>Anakin Skywalker</td>
+                    <td>11</td>
+                </tr>
+                <tr>
+                    <td>Wilhuff Tarkin</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>Chewbacca</td>
+                    <td>13</td>
+                </tr>
+                <tr>
+                    <td>Han Solo</td>
+                    <td>14</td>
+                </tr>
+                <tr>
+                    <td>Greedo</td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <td>Jabba Desilijic Tiure</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td>Wedge Antilles</td>
+                    <td>18</td>
+                </tr>
+                <tr>
+                    <td>Jek Tono Porkins</td>
+                    <td>19</td>
+                </tr>
+                <tr>
+                    <td>Yoda</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td>Palpatine</td>
+                    <td>21</td>
+                </tr>
+                <tr>
+                    <td>Boba Fett</td>
+                    <td>22</td>
+                </tr>
+                <tr>
+                    <td>IG-88</td>
+                    <td>23</td>
+                </tr>
+                <tr>
+                    <td>Bossk</td>
+                    <td>24</td>
+                </tr>
+                <tr>
+                    <td>Lando Calrissian</td>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <td>Lobot</td>
+                    <td>26</td>
+                </tr>
+                <tr>
+                    <td>Ackbar</td>
+                    <td>27</td>
+                </tr>
+                <tr>
+                    <td>Mon Mothma</td>
+                    <td>28</td>
+                </tr>
+                <tr>
+                    <td>Arvel Crynyd</td>
+                    <td>29</td>
+                </tr>
+                <tr>
+                    <td>Wicket Systri Warrick</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>Nien Nunb</td>
+                    <td>31</td>
+                </tr>
+                <tr>
+                    <td>Qui-Gon Jinn</td>
+                    <td>32</td>
+                </tr>
+                <tr>
+                    <td>Nute Gunray</td>
+                    <td>33</td>
+                </tr>
+                <tr>
+                    <td>Finis Valorum</td>
+                    <td>34</td>
+                </tr>
+                <tr>
+                    <td>Padme Amidala</td>
+                    <td>35</td>
+                </tr>
+                <tr>
+                    <td>Jar Jar Binks</td>
+                    <td>36</td>
+                </tr>
+                <tr>
+                    <td>Roos Tarpals</td>
+                    <td>37</td>
+                </tr>
+                <tr>
+                    <td>Rugor Nass</td>
+                    <td>38</td>
+                </tr>
+                <tr>
+                    <td>Ric Olié</td>
+                    <td>39</td>
+                </tr>
+                <tr>
+                    <td>Watto</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td>Sebulba</td>
+                    <td>41</td>
+                </tr>
+                <tr>
+                    <td>Quarsh Panaka</td>
+                    <td>42</td>
+                </tr>
+                <tr>
+                    <td>Shmi Skywalker</td>
+                    <td>43</td>
+                </tr>
+                <tr>
+                    <td>Darth Maul</td>
+                    <td>44</td>
+                </tr>
+                <tr>
+                    <td>Bib Fortuna</td>
+                    <td>45</td>
+                </tr>
+                <tr>
+                    <td>Ayla Secura</td>
+                    <td>46</td>
+                </tr>
+                <tr>
+                    <td>Ratts Tyerell</td>
+                    <td>47</td>
+                </tr>
+                <tr>
+                    <td>Dud Bolt</td>
+                    <td>48</td>
+                </tr>
+                <tr>
+                    <td>Gasgano</td>
+                    <td>49</td>
+                </tr>
+                <tr>
+                    <td>Ben Quadinaros</td>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <td>Mace Windu</td>
+                    <td>51</td>
+                </tr>
+                <tr>
+                    <td>Ki-Adi-Mundi</td>
+                    <td>52</td>
+                </tr>
+                <tr>
+                    <td>Kit Fisto</td>
+                    <td>53</td>
+                </tr>
+                <tr>
+                    <td>Eeth Koth</td>
+                    <td>54</td>
+                </tr>
+                <tr>
+                    <td>Adi Gallia</td>
+                    <td>55</td>
+                </tr>
+                <tr>
+                    <td>Saesee Tiin</td>
+                    <td>56</td>
+                </tr>
+                <tr>
+                    <td>Yarael Poof</td>
+                    <td>57</td>
+                </tr>
+                <tr>
+                    <td>Plo Koon</td>
+                    <td>58</td>
+                </tr>
+                <tr>
+                    <td>Mas Amedda</td>
+                    <td>59</td>
+                </tr>
+                <tr>
+                    <td>Gregar Typho</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <td>Cordé</td>
+                    <td>61</td>
+                </tr>
+                <tr>
+                    <td>Cliegg Lars</td>
+                    <td>62</td>
+                </tr>
+                <tr>
+                    <td>Poggle the Lesser</td>
+                    <td>63</td>
+                </tr>
+                <tr>
+                    <td>Luminara Unduli</td>
+                    <td>64</td>
+                </tr>
+                <tr>
+                    <td>Barriss Offee</td>
+                    <td>65</td>
+                </tr>
+                <tr>
+                    <td>Dormé</td>
+                    <td>66</td>
+                </tr>
+                <tr>
+                    <td>Dooku</td>
+                    <td>67</td>
+                </tr>
+                <tr>
+                    <td>Bail Prestor Organa</td>
+                    <td>68</td>
+                </tr>
+                <tr>
+                    <td>Jango Fett</td>
+                    <td>69</td>
+                </tr>
+                <tr>
+                    <td>Zam Wesell</td>
+                    <td>70</td>
+                </tr>
+                <tr>
+                    <td>Dexter Jettster</td>
+                    <td>71</td>
+                </tr>
+                <tr>
+                    <td>Lama Su</td>
+                    <td>72</td>
+                </tr>
+                <tr>
+                    <td>Taun We</td>
+                    <td>73</td>
+                </tr>
+                <tr>
+                    <td>Jocasta Nu</td>
+                    <td>74</td>
+                </tr>
+                <tr>
+                    <td>R4-P17</td>
+                    <td>75</td>
+                </tr>
+                <tr>
+                    <td>Wat Tambor</td>
+                    <td>76</td>
+                </tr>
+                <tr>
+                    <td>San Hill</td>
+                    <td>77</td>
+                </tr>
+                <tr>
+                    <td>Shaak Ti</td>
+                    <td>78</td>
+                </tr>
+                <tr>
+                    <td>Grievous</td>
+                    <td>79</td>
+                </tr>
+                <tr>
+                    <td>Tarfful</td>
+                    <td>80</td>
+                </tr>
+                <tr>
+                    <td>Raymus Antilles</td>
+                    <td>81</td>
+                </tr>
+                <tr>
+                    <td>Sly Moore</td>
+                    <td>82</td>
+                </tr>
+                <tr>
+                    <td>Tion Medon</td>
+                    <td>83</td>
+                </tr>
+                <tr>
+                    <td>Finn</td>
+                    <td>84</td>
+                </tr>
+                <tr>
+                    <td>Rey</td>
+                    <td>85</td>
+                </tr>
+                <tr>
+                    <td>Poe Dameron</td>
+                    <td>86</td>
+                </tr>
+                <tr>
+                    <td>BB8</td>
+                    <td>87</td>
+                </tr>
+                <tr>
+                    <td>Captain Phasma</td>
+                    <td>88</td>
+                </tr>
+
+            </table>
+        </div>
+
     </div>
 </body>
 
