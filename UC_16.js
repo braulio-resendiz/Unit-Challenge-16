@@ -100,3 +100,14 @@ function SpeciesData(url) {
     httpRequest.open("GET", url, true);
     httpRequest.send();
 }
+
+function displayPlace(data) {
+    var place = JSON.parse(data);
+    if (findCharacter.people === "none") {
+        document.getElementById("character").className = "alert alert-warning";
+        document.getElementById("character").innerHTML = "Not in our records"
+    } else {
+        document.getElementById("character").className = "alert alert-success";
+        document.getElementById("character").innerHTML = findCharacter.people[0]["character name"] + ", " + findCharacter.people[0] + ", " + findCharacter.people;
+    }
+}
